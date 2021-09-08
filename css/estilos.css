@@ -102,7 +102,8 @@ footer {
 /* INDEX */
 .headInd .headCol, .bodyContacto .headContacto .headCol {
   display: grid;
-  grid-template-areas: "navBar navBar navBar" "imag imag titulo";
+  grid-template-areas: "navBar navBar navBar"
+ "imag imag titulo";
   grid-template-columns: 33% 33% 33%;
   text-align: center;
   background-image: radial-gradient(#71FFFF, #75209B); }
@@ -145,7 +146,8 @@ footer {
     .mainInd .mainIndUno .bioInd {
       grid-area: bioInd;
       display: grid;
-      grid-template-areas: "titulo titulo" "imagen mensaje";
+      grid-template-areas: "titulo titulo"
+ "imagen mensaje";
       grid-template-columns: 50% 50%;
       align-items: center;
       text-align: center;
@@ -176,7 +178,9 @@ footer {
       height: 100%;
       background-color: #fff;
       display: grid;
-      grid-template-areas: "titulo titulo" "disco reproductor" "mensaje mensaje";
+      grid-template-areas: "titulo titulo"
+ "disco reproductor"
+ "mensaje mensaje";
       grid-template-columns: 50% 50%;
       align-items: center;
       transition: 0s background-color;
@@ -316,7 +320,8 @@ footer {
 /* BIOGRAFÍA */
 .headBio .headCol {
   display: grid;
-  grid-template-areas: "navBar navBar navBar" "imag imag titulo";
+  grid-template-areas: "navBar navBar navBar"
+ "imag imag titulo";
   grid-template-columns: 33% 33% 33%;
   text-align: center;
   background-image: radial-gradient(#FF7171, #9B2020); }
@@ -405,7 +410,8 @@ footer {
   background-image: none; }
   .bodyDisco .headDisco .headCol {
     display: grid;
-    grid-template-areas: "navBar navBar navBar" "imag imag titulo";
+    grid-template-areas: "navBar navBar navBar"
+ "imag imag titulo";
     grid-template-columns: 33% 33% 33%;
     text-align: center;
     background-image: radial-gradient(#93fd70, #447a7a); }
@@ -486,7 +492,8 @@ footer {
 /*BANDAS*/
 .bodyBandas .headBandas .headCol {
   display: grid;
-  grid-template-areas: "navBar navBar navBar" "imag imag titulo";
+  grid-template-areas: "navBar navBar navBar"
+ "imag imag titulo";
   grid-template-columns: 33% 33% 33%;
   text-align: center;
   background-image: radial-gradient(#FD8C69, #A82654); }
@@ -530,7 +537,7 @@ footer {
     text-align: center;
     padding: 5vw; }
     .bodyBandas .mainBandas .mainBandasUno .bandasColUno img, .bodyBandas .mainBandas .mainBandasTres .bandasColUno img {
-      width: 70%;
+      width: 60%;
       box-shadow: 3px 3px 5px black; }
   .bodyBandas .mainBandas .mainBandasUno .bandasColDos, .bodyBandas .mainBandas .mainBandasTres .bandasColDos {
     padding: 5vw; }
@@ -557,7 +564,7 @@ footer {
     text-align: center;
     padding: 5vw; }
     .bodyBandas .mainBandas .mainBandasDos .bandasColDos img {
-      width: 70%;
+      width: 60%;
       box-shadow: 3px 3px 5px black; }
 
 .bodyBandas .mainBandas .mainBandasTres {
@@ -638,7 +645,8 @@ footer {
   .bodyInd .headInd .headCol .tituloInd h1, .bodyInd .bodyContacto .headContacto .headCol .tituloInd h1, .bodyContacto .bodyInd .headContacto .headCol .tituloInd h1 {
     font-size: 4.5vw; }
   .bodyInd .mainInd .mainIndUno {
-    grid-template-areas: "bioInd" "discoInd";
+    grid-template-areas: "bioInd"
+ "discoInd";
     grid-template-columns: 100% 100%; }
     .bodyInd .mainInd .mainIndUno .bioInd {
       height: 53vh; }
@@ -662,7 +670,8 @@ footer {
         .bodyInd .mainInd .mainIndUno .discoInd .msjDisco p:hover {
           font-size: 1rem; }
   .bodyInd .mainInd .mainIndDos {
-    grid-template-areas: "bandasInd" "contactoInd";
+    grid-template-areas: "bandasInd"
+ "contactoInd";
     grid-template-columns: 100% 100%;
     height: 100%; }
     .bodyInd .mainInd .mainIndDos .bandasIndCol {
@@ -803,7 +812,8 @@ footer {
   .bodyInd .headInd .headCol .navInd a, .bodyInd .bodyContacto .headContacto .headCol .navInd a, .bodyContacto .bodyInd .headContacto .headCol .navInd a {
     font-size: 1.6vw; }
   .bodyInd .mainInd .mainIndUno {
-    grid-template-areas: "bioInd" "discoInd";
+    grid-template-areas: "bioInd"
+ "discoInd";
     grid-template-columns: 100% 100%; }
     .bodyInd .mainInd .mainIndUno .bioInd {
       height: 53vh; }
@@ -818,7 +828,8 @@ footer {
         .bodyInd .mainInd .mainIndUno .discoInd .msjDisco p:hover {
           font-size: 1.3rem; }
   .bodyInd .mainInd .mainIndDos {
-    grid-template-areas: "bandasInd" "contactoInd";
+    grid-template-areas: "bandasInd"
+ "contactoInd";
     grid-template-columns: 100% 100%;
     height: 100%; }
     .bodyInd .mainInd .mainIndDos .bandasIndCol {
