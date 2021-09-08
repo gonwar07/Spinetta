@@ -1,0 +1,1482 @@
+//VARIABLES
+$colorPrimario: radial-gradient(#71FFFF, #75209B);
+$colorSecundario: radial-gradient(#FF7171,#9B2020);
+$colorTerciario: radial-gradient(#93fd70, #447a7a);
+$colorBandas: radial-gradient(#FD8C69, #A82654);
+$colorContacto: radial-gradient(#F6B5CC, #6D678E);
+$fondoClaro: #eaeaea;
+$textoClaro: white;
+$textoOscuro: black;
+$fuentePrincipal: 'Alfa Slab One', cursive;
+$fuenteSecundaria: 'Josefin Sans', sans-serif;
+
+//MIXINS
+@mixin sizes($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+//ESTILOS GENERALES
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100%;
+    background-image: $colorPrimario;
+    color: $textoClaro;
+    font-family: 'Open Sans', serif;
+    letter-spacing: 1px;
+    text-align: justify;
+    line-height: 30px;
+    p{
+    font-size: 1.2vw;
+    }
+    ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    }
+    h1{font-size: 3.5vw;}
+    h2{font-size: 3.5vw;}
+    h3{font-size: 1.3rem;}
+}
+.grilla{
+    display: grid;
+    .header{
+        grid-area: header;
+    }
+    main{
+        grid-area: main;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    footer{
+        grid-area: footer;
+    }
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    .divMenu{
+        justify-content: space-between;
+        .botonMenu{
+            @include sizes(auto, 60px);
+            align-self: center;
+        }
+    }    
+    .navbar-nav{
+        width: max-content;
+        text-align: center;
+        float: none;
+        margin-right: 0;
+        padding: 0;
+        border: none;
+        line-height: 0;
+        background-color: inherit;
+        .navbar-light{
+            .nav-item{
+                border: none;
+                width: 100%;
+                padding-left: 0;
+        
+            }
+        }
+    }
+}
+.navbar-light #navbarNav .nav-item .menuPrimario{
+    color: $textoClaro;
+}
+.navbar-light #navbarNav .nav-item .menuPrimario:hover{
+    color: #2b282a;
+}
+.navbar-light #navbarNav .nav-item .menuSecundario{
+    color: $textoClaro;
+}
+.navbar-light #navbarNav .nav-item .menuSecundario:hover{
+    color: #2b282a;
+}
+.mensajes{
+    grid-area: mensaje;
+    display: none;
+    font-size: 1.5vw;
+    font-family: $fuenteSecundaria;
+}
+footer{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    color: $textoClaro;
+    height: 20vh;
+
+    p{
+        font-size: 0.8rem;
+    }
+
+    ul{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 25%;
+        font-size: 1.4rem;
+        padding-left: 0;
+
+        li a{
+            color: $textoClaro;
+        }
+        li a:hover{
+            color:#2b282a;
+        }
+    }
+}
+
+/* INDEX */
+.bodyInd{
+    .headInd{
+        .headCol{
+            display: grid;
+            grid-template-areas: "navBar navBar navBar"
+                                "imag imag titulo";
+            grid-template-columns: 33% 33% 33%;
+            text-align: center;
+            background-image: $colorPrimario;        
+            .navInd{
+                grid-area: navBar;
+                text-align: start;
+                word-spacing: 1vw;
+                margin-top: 1.5vw;
+                margin-left: 2vw;
+                a{
+                    color: $textoOscuro;
+                    text-decoration: none;
+                    font-size: 1.1vw;
+                    letter-spacing: 0.2vw;
+                    font-weight: bold;
+                }
+                a:hover{
+                    color: $textoClaro;
+                }
+            }
+            .imgInd{
+                grid-area: imag;
+                img{
+                    width: 60%;
+                    height: 100%;
+                    margin-left: 48%;
+                }
+            }
+            .tituloInd{
+                grid-area: titulo;
+                align-self: center;
+                h1{
+                    color: $textoOscuro;
+                    font-family: 'Alfa Slab One', cursive;
+                }
+                span{
+                    color: $textoClaro;
+                }
+            }
+        }
+    }
+    .mainInd{
+        font-family: $fuentePrincipal;
+        .mainIndUno{
+            display: grid;
+            grid-template-areas: "bioInd discoInd";
+            grid-template-columns: 50% 50%;
+            align-items: center;
+            .bioInd{
+                grid-area: bioInd;
+                display: grid;
+                grid-template-areas: "titulo titulo"
+                                    "imagen mensaje";
+                grid-template-columns: 50% 50%;
+                align-items: center;
+                text-align: center;
+                background-color: $textoOscuro;
+                height: 100%;
+                padding-bottom: 6vw;
+                transition: 0s background-color;
+                color: $textoClaro;
+                img{
+                    grid-area: imagen;
+                    width: 75%;
+                }
+                h2{
+                    grid-area: titulo;
+                    margin-top: 6vw;
+                }
+                .msjBio{
+                    @extend .mensajes;
+                    p:hover{
+                        font-size: 1.7vw;
+                    }
+                }
+            }
+            .bioInd:hover{
+                background-color: $fondoClaro;
+                color: $textoOscuro;
+                -moz-transition: .4s linear;
+                -webkit-transition: .4s ease-out;
+                transition: .4s linear;
+                .msjBio{
+                    display: initial;
+                }
+            }
+            .discoInd{
+                grid-area: discoInd;
+                text-align: center;
+                height: 100%;
+                background-color: #fff;
+                display: grid;
+                grid-template-areas: "titulo titulo"
+                                    "disco reproductor"
+                                    "mensaje mensaje";
+                grid-template-columns: 50% 50%;
+                align-items: center;
+                transition: 0s background-color;
+                color: $textoOscuro;
+                justify-items: center;
+                img{
+                    grid-area: disco;
+                    width: 60%;
+                    margin-left: 5vw;
+                    margin-top: -6vw;
+                }
+                h2{
+                    grid-area: titulo;
+                    margin-top: 4vw;
+                }
+                audio{
+                    grid-area: reproductor;
+                    width: 75%;
+                    margin-left: -2vw;
+                    margin-top: -6vw;
+                }
+                .msjDisco{
+                    @extend .mensajes;
+                    width: 53vw;
+                    margin-bottom: 0;
+                    position: absolute;
+                    top: 34vw;
+                    left: 25vw;
+                    p:hover{
+                        font-size: 1.7vw;
+                    }
+                }
+            }
+            .discoInd:hover{
+                background-color: $fondoClaro;
+                -moz-transition: .4s linear;
+                -webkit-transition: .4s ease-out;
+                transition: .4s linear;
+                .msjDisco{
+                    display: initial;
+                }
+            }
+        }
+        .mainIndDos{
+            display: grid;
+            grid-template-columns: 70% 30%;
+            grid-template-areas: "bandasInd contactoInd";
+            background-color: $textoOscuro;
+            height: 32vw;
+            .bandasIndCol{
+                grid-area: bandasInd;
+                height: 100%;
+                text-align: center;
+                background-image: radial-gradient(#eaeaea,#5b5b5b);
+                transition: 0s background-image;
+                position: relative;
+                img{
+                    width: 65%;
+                    opacity: 85%;
+                    margin-top: 3vw;
+                }
+                .textoBandasInd{
+                    display: none;
+                    position: relative;
+                    justify-content: center;
+                    width: 50%;
+                    height: 40%;
+                    padding-top: 3%;
+                    margin-top: -16vw;
+                    margin-left: 16vw;
+                    background-color: #ffffffeb;
+                    box-shadow: 0px 0px 5px black;
+                    h2{
+                        position: relative;
+                        color: $textoOscuro;
+                        font-family: $fuentePrincipal;
+                    }
+                    p{
+                        position: relative;
+                        font-family: $fuenteSecundaria;
+                        font-size: 1.5vw;
+                    }
+                }
+            }
+            .bandasIndCol:hover{
+                .textoBandasInd{
+                    display: block;
+                    -moz-transition: .4s linear;
+                    -webkit-transition: .4s ease-out;
+                    transition: .4s linear;
+                    p:hover{
+                        font-size: 1.7vw;
+                    }
+                }
+            }
+            .contactoIndCol{
+                grid-area: contactoInd;
+                display: flex;
+                flex-flow: column nowrap;
+                height: 100%;
+                text-align: center;
+                background-color: black;
+                align-self: center;
+                color: $textoClaro;
+                justify-content: center;
+                div{
+                    align-self: center;
+                    h2{
+                        align-self: center;
+                    }
+                    ul{
+                        display: flex;
+                        flex-flow: row nowrap;
+                        justify-content: space-evenly;
+                        margin-left: -4vw;
+                    a{
+                        color: #71FFFF;
+                    }
+                    a:hover{
+                        color: #75209B;
+                    }
+            
+                    }
+                    .msjContacto{
+                        @extend .mensajes;
+                        p:hover{
+                            font-size: 1.7vw;
+                        }
+                    }
+                }
+            }
+            .contactoIndCol:hover{
+                background-color: $fondoClaro;
+                color: $textoOscuro;
+                -moz-transition: .4s linear;
+                -webkit-transition: .4s ease-out;
+                transition: .4s linear;
+                .redes{
+                    color: #75209B;
+                    transition-delay:0.1s;
+                }
+                .msjContacto{
+                    display: initial;
+                    transition-delay:0.1s;
+                }
+            }
+
+        }
+    }
+    .footerInd{
+        height: 100%;
+        background-color: black;
+        .footerIndCol{
+        text-align: center;
+        p{
+            margin-top: 0vw;
+            color: white;
+            text-align: center;
+        }
+        img{
+            position: unset;
+            width: 25%;
+            margin-top: -21vw;
+        }
+    }
+    }
+    .cartelClick{
+        text-decoration: none;
+        color: #6b0e95;
+    }
+    .cartelClick:hover{
+        color: #1b79ff;
+    }
+}
+/* CIERRE INDEX */
+
+/* BIOGRAFÍA */
+.bodyBio{
+    .headBio{
+        .headCol{
+            display: grid;
+            grid-template-areas: "navBar navBar navBar"
+                                "imag imag titulo";
+            grid-template-columns: 33% 33% 33%;
+            text-align: center;
+            background-image: $colorSecundario;
+            .navBio{
+                grid-area: navBar;
+                text-align: start;
+                word-spacing: 1vw;
+                margin-top: 1.5vw;
+                margin-left: 2vw;
+                a{
+                    color: $textoOscuro;
+                    text-decoration: none;
+                    font-size: 1.1vw;
+                    letter-spacing: 0.2vw;
+                    font-weight: bold;
+                }
+                a:hover{
+                    color: $textoClaro;
+                }
+            }
+            .imgBio{
+                grid-area: imag;
+                img{
+                    width: 60%;
+                    height: 100%;
+                    margin-left: 48%;
+                }
+            }
+            .tituloBio{
+                grid-area: titulo;
+                align-self: center;
+                h1{
+                    color: $textoOscuro;
+                    font-family: 'Alfa Slab One', cursive;
+                }
+                span{
+                    color: $textoClaro;
+                }
+            }
+        }
+    }
+    .mainBio{
+        .mainBioUno{
+            background-color: $fondoClaro;
+            color: $textoOscuro;
+            .bioColUno{
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: space-evenly;
+                align-items: center;
+                text-align: center;
+                padding: 5vw;
+                img{
+                    width: 60%;
+                    box-shadow: 3px 3px 5px black;
+                }
+                .imgOculta{
+                    display: none;
+                }
+            }
+            .bioColDos{
+                padding: 5vw;
+                h2{
+                    text-align: center;
+                    font-weight: bold;
+                }
+                .textoMainBio{
+                    margin-top: 3vw;
+                }
+            }
+        }
+        .mainBioDos{
+            background-color: #171717;
+            .bioColUno{
+                padding: 5vw;
+                h2{
+                    text-align: center;
+                    font-weight: bold;
+                }
+                .textoMainBio{
+                    margin-top: 3vw;
+                }
+            }
+            .bioColDos{
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: space-evenly;
+                align-items: center;
+                text-align: center;
+                padding: 5vw;
+                img{
+                    width: 55%;
+                    box-shadow: 3px 3px 5px black;
+                }
+                .imgOculta{
+                    display: none;
+                }
+            }
+        }
+        .mainBioTres{
+            @extend .mainBioUno;
+            position: relative;
+            z-index: 2;
+        }
+    }
+}
+/*CIERRE BIOGRAFÍA*/
+
+/*DISCOGRAFÍA*/
+.bodyDisco{
+    background-color: #252626;
+    background-image: none;
+    .headDisco{
+        .headCol{
+            display: grid;
+            grid-template-areas: "navBar navBar navBar"
+                                 "imag imag titulo";
+            grid-template-columns: 33% 33% 33%;
+            text-align: center;
+            background-image: $colorTerciario;        
+            .navDisco{
+                grid-area: navBar;
+                text-align: start;
+                word-spacing: 1vw;
+                margin-top: 1.5vw;
+                margin-left: 2vw;
+                a{
+                    color: $textoOscuro;
+                    text-decoration: none;
+                    font-size: 1.1vw;
+                    letter-spacing: 0.2vw;
+                    font-weight: bold;
+                }
+                a:hover{
+                    color: $textoClaro;
+                }
+            }
+            .imgDisco{
+                grid-area: imag;
+                img{
+                    width: 60%;
+                    height: 100%;
+                    margin-left: 48%;
+                }
+            }
+            .tituloDisco{
+                grid-area: titulo;
+                align-self: center;
+                h1{
+                    color: $textoOscuro;
+                    font-family: 'Alfa Slab One', cursive;
+                }
+                span{
+                    color: $textoClaro;
+                }
+            }
+        }
+    }
+    .mainDisco{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        justify-items: center;
+        position: relative;
+        z-index: 1;
+        .discosSec{
+            max-width: 600px;
+            width: 550px;
+            height: 350px;
+            box-shadow: 5px 5px 4px black;
+            background-image: $colorTerciario;
+            padding: 2.5vw;
+            margin-top: 2.5vw;
+            color: black;
+            .imgDisco{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    width: 80%;
+                    height: max-content;
+                    box-shadow: 0px 0px 9px black;
+                }
+            }
+            .colDosDisco{
+                text-align: center;
+                .nombre{
+                    font-weight: bold;
+                }
+                .nombreBis{
+                    font-size: 1.1vw;
+                }
+                .redes{
+                    display: flex;
+                    justify-content: space-evenly;
+                    position: relative;
+                    top: 50%;
+                    font-size: 2vw;
+                    a{
+                        color: #2b0dfd;
+                    }
+                    a:hover{
+                        color: #8f91ff;
+                    }
+                }
+                .redesBis{
+                    top: 42%;
+                }
+            }
+
+        }
+    }
+    .footerInd{
+        img{
+            margin-top: 0vw;
+        }
+    }
+}
+/*CIERRE DISCOGRAFÍA*/
+
+/*BANDAS*/
+.bodyBandas{
+    .headBandas{
+        .headCol{
+            display: grid;
+            grid-template-areas: "navBar navBar navBar"
+                                 "imag imag titulo";
+                                 grid-template-columns: 33% 33% 33%;
+                                 text-align: center;
+                                 background-image: $colorBandas;
+            .navBandas{
+                grid-area: navBar;
+                text-align: start;
+                word-spacing: 1vw;
+                margin-top: 1.5vw;
+                margin-left: 2vw;
+                a{
+                    color: $textoOscuro;
+                    text-decoration: none;
+                    font-size: 1.1vw;
+                    letter-spacing: 0.2vw;
+                    font-weight: bold;
+                }
+                a:hover{
+                    color: $textoClaro;
+                }
+            }
+            .imgBandas{
+                grid-area: imag;
+                img{
+                    width: 60%;
+                    height: 100%;
+                    margin-left: 48%;
+                }
+            }
+            .tituloBandas{
+                grid-area: titulo;
+                align-self: center;
+                h1{
+                    color: $textoOscuro;
+                    font-family: 'Alfa Slab One', cursive;
+                }
+                span{
+                    color: $textoClaro;
+                }
+            }
+        }
+    }
+    .mainBandas{
+        .mainBandasUno{
+            background-color: $fondoClaro;
+            color: $textoOscuro;
+            .bandasColUno{
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: space-evenly;
+                align-items: center;
+                text-align: center;
+                padding: 5vw;
+                img{
+                    width: 70%;
+                    box-shadow: 3px 3px 5px black;
+                }
+            }
+            .bandasColDos{
+                padding: 5vw;
+                h2{
+                    text-align: center;
+                    font-weight: bold;
+                }
+                .textoMainBandas{
+                    margin-top: 3vw;
+                }
+            }
+        }
+        .mainBandasDos{
+            background-color: #171717;
+            .bandasColUno{
+                padding: 5vw;
+                h2{
+                    text-align: center;
+                    font-weight: bold;
+                }
+                .textoMainBandas{
+                    margin-top: 3vw;
+                }
+            }
+            .bandasColDos{
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: space-evenly;
+                align-items: center;
+                text-align: center;
+                padding: 5vw;
+                img{
+                    width: 70%;
+                    box-shadow: 3px 3px 5px black;
+                }
+            }
+        }
+        .mainBandasTres{
+            @extend.mainBandasUno;
+            position: relative;
+            z-index: 2;
+        }
+    }    
+}
+/*CIERRE BANDAS*/
+
+/*CONTACTO*/
+.bodyContacto{
+    .headContacto{
+        @extend.headInd;
+        .headCol{
+            background-image: $colorContacto;
+        }
+    }
+    .mainContacto{
+        position: relative;
+        z-index: 2;
+        background-color: #0f0f0f;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+        padding-top: 20vh;
+        padding-bottom: 20vh; 
+        #imgContacto{
+            box-shadow: 0px 0px 10px black;
+        }     
+        #formulario{
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        
+            #radio{
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-evenly;
+                margin: 15px;
+                width: 20vw;
+                p{
+                    margin-top: -7px;
+                    margin-left: 5px;
+                }
+            }
+            .data{
+                padding: 10px;
+                margin-bottom: 10px;
+                font-size: 0.8rem;
+                min-width: 300px;
+            }
+            .data:focus{
+                font-size: 0.6rem;
+                border: 2px solid #d190d7;
+            }
+            .botones{
+                margin-top: 20px;
+                font-size: 0.8rem;
+            }
+            .bot{
+                min-width: 130px;
+            }
+            .bot:hover{
+                background-color: #d190d7;
+            }
+            textarea {
+                padding: 10px;
+                font-size: 0.8rem;
+                width: 100%;
+                min-width: 430px;
+            }
+            textarea:focus{
+                @extend.data:focus;
+            }
+        }
+    }
+    .footerInd{
+        img{
+            margin-top: 0vw;
+        }
+    }
+}
+/*CIERRE CONTACTO*/
+
+/* MEDIA QUERIES */
+@media screen and (max-width:600px){
+    /*General*/
+    .footerInd{
+        .footerIndCol{
+            img{
+                width: 35%;
+                margin-top: -30vw;
+            }
+            .imgFooterDos{
+                margin-top: 0;
+            }
+        }
+    }
+ 
+    /*INDEX*/
+    .bodyInd{
+        .headInd{
+            .headCol{
+                .navInd{
+                    a{
+                        font-size: 2vw;
+                    }
+                }
+                .imgInd{
+                    img{
+                        width: 100%;
+                        margin-left: 16vw;
+                    }
+                }
+                .tituloInd{
+                    h1{font-size: 4.5vw;}
+                }
+            }
+        }
+        .mainInd{
+            .mainIndUno{
+                grid-template-areas: "bioInd"
+                                     "discoInd";
+                grid-template-columns: 100% 100%;
+                .bioInd{
+                    height: 53vh;
+                    img{
+                        width: 60%;
+                        margin-left: 30px;
+                    }
+                    .msjBio{
+                        p{font-size: 2.5vw;}                        }
+                        p:hover{font-size: 1rem;}
+                    }
+                    .discoInd{
+                        height: 53vh;
+                        img{width: 50%;}
+                        .msjDisco{
+                            position: relative;
+                            top: -10px;
+                            left: 0;
+                            p{font-size:2.5vw;}
+                            p:hover{font-size: 1rem;}
+                        }
+                    }
+                }
+            .mainIndDos{
+                grid-template-areas: "bandasInd"
+                                     "contactoInd";   
+                grid-template-columns: 100% 100%;
+                height: 100%;
+                .bandasIndCol{
+                    height: 53vh;
+                    .textoBandasInd{
+                        width: 70%;
+                        height: 50%;
+                        margin-top: -24vw;
+                        margin-left: 15vw;
+                        p{font-size: 2.5vw;}
+                        p:hover{font-size: 1rem;}
+                    }
+                }
+                .contactoIndCol{
+                    height: 53vh;
+                    position: relative;
+                    z-index: 999999999;
+                    .msjContacto{
+                        p{font-size: 2.5vw;}
+                        p:hover{font-size: 1rem;}
+                    }
+                }
+            }
+        }
+    }
+    /*CIERRE INDEX*/
+
+    /*BIOGRAFÍA*/
+    .bodyBio{
+        .headBio{
+            .headCol{
+                .navBio{
+                    a{font-size: 2vw;}
+                }
+                .imgBio{
+                    img{
+                        width: 100%;
+                        margin-left: 16vw;
+                    }
+                }
+                .tituloBio{
+                    h1{font-size: 4.5vw;}
+                }
+            }
+        }
+        .mainBio{
+            .textoMainBio{
+                p{font-size:2vw};
+            }
+            .mainBioUno{
+                flex-flow: column nowrap;
+                .bioColUno{
+                    flex-flow: row nowrap;
+                    justify-content: center;
+                    img{
+                        width: 30%;
+                    }
+                }
+                .bioColDos{
+                    p{
+                        margin-left: 8vw;
+                        margin-right: 8vw;
+                    }
+                }
+            }
+            .mainBioDos{
+                flex-flow: column-reverse nowrap;
+                .bioColUno{
+                    p{
+                        margin-left: 8vw;
+                        margin-right: 8vw;
+                    }
+                }
+                .bioColDos{
+                    flex-flow: row nowrap;
+                }
+            }
+            .mainBioTres{
+                flex-flow: column nowrap;
+                .bioColUno{
+                    flex-flow: row nowrap;
+                }
+                .bioColDos{
+                    p{
+                        margin-left: 8vw;
+                        margin-right: 8vw;
+                    }
+                }
+            }
+        }
+    }
+    /*CIERRE BIOGRAFÍA*/
+
+    /*DISCOGRAFÍA*/
+    .bodyDisco{
+        .headDisco{
+            .headCol{
+                .navDisco{
+                    a{
+                        font-size: 2vw;
+                    }
+                }
+                .imgDisco{
+                    img{
+                        width: 100%;
+                        margin-left: 16vw;
+                    }
+                }
+                .tituloDisco{
+                    margin-left: -110vw;
+                    h1{font-size:4.5vw;}
+                }
+            }
+        }
+        .mainDisco{
+            grid-template-columns: 1fr;
+            .discosSec{
+                max-width: none;
+                width: 90%;
+                height: 200px;
+                .imgDisco{
+                    img{
+                        width: 60%;
+                    }
+                }
+                .colDosDisco{
+                    .nombre{
+                        font-size: 0.9rem;
+                    }
+                    .redes{
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
+
+    }
+    /*CIERRE DISCOGRAFÍA*/
+    
+    /*BANDAS*/
+    .bodyBandas{
+        .headBandas{
+            .headCol{
+                .navBandas{
+                    a{
+                        font-size: 2vw;
+                    }
+                }
+                .imgBandas{
+                    img{
+                        width: 100%;
+                        margin-left: 16vw;
+                    }
+                }
+                .tituloBandas{
+                    h1{font-size:4.5vw;}
+                }
+            }
+        }
+        .mainBandas{
+            .textoMainBandas{
+                p{
+                    font-size:2vw;
+                    margin-left: 8vw;
+                    margin-right: 8vw;
+                }
+            }
+            .mainBandasUno{
+                flex-flow: column nowrap;
+                .bandasColUno{
+                    flex-flow: row nowrap;
+                    img{width: 35%;}
+                }
+            }
+            .mainBandasDos{
+                flex-flow: column-reverse nowrap;
+                .bandasColDos{
+                    flex-flow: row nowrap;
+                    img{width: 35%;}
+                }
+            }
+            .mainBandasTres{
+                .bandasColUno{
+                    img{width: 35%;}
+                }
+            }
+        }
+    }
+    /*CIERRE BANDAS*/
+
+    /*CONTACTO*/
+    .bodyContacto{
+        .headContacto{
+            .headCol{
+                .navInd{
+                    a{font-size: 2vw;}
+                }
+                .imgInd{
+                    img{
+                        width: 100%;
+                        margin-left: 16vw;
+                    }
+                }
+                .tituloInd{
+                    h1{font-size: 4.5vw;}
+                }
+            }
+        }
+        .mainContacto{
+            padding-top: 40px;
+            padding-bottom: 40px;
+            img{width:80%;}
+            #formulario{
+                textarea{
+                    width: 80%;
+                    min-width: 330px;
+                }
+                #radio{
+                    p{font-size: 3vw;}
+                }
+            }
+        }
+    }
+    /*CIERRE CONTACTO*/
+}
+@media (min-width:601px) and (max-width:800px){
+    /*General*/
+    .footerInd{
+        .footerIndCol{
+            img{
+                width: 35%;
+                margin-top: -30vw;
+            }
+            .imgFooterDos{
+                margin-top: 0;
+            }
+        }
+    }
+    .mensajes{
+        font-size: 1.1rem;
+    }
+    /*INDEX*/
+    .bodyInd{
+        .headInd{
+            .headCol{
+                .navInd{
+                    a{
+                        font-size: 1.6vw;
+                    }
+                }
+            }
+        }
+        .mainInd{
+            .mainIndUno{
+                grid-template-areas: "bioInd"
+                                     "discoInd";
+                grid-template-columns: 100% 100%;
+                .bioInd{
+                    height: 53vh;
+                    .msjBio{
+                        p:hover{
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+                .discoInd{
+                    height: 53vh;
+                    .msjDisco{
+                        position: relative;
+                        top: -10px;
+                        left: 0;
+                        p:hover{
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+            }
+            .mainIndDos{
+                grid-template-areas: "bandasInd"
+                                     "contactoInd";   
+                grid-template-columns: 100% 100%;
+                height: 100%;
+                .bandasIndCol{
+                    height: 53vh;
+                    .textoBandasInd{
+                        margin-top: -21vw;
+                        margin-left: 25vw;
+                        p{
+                            font-size: 1.1rem;
+                        }
+                        p:hover{
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+                .contactoIndCol{
+                    height: 53vh;
+                    position: relative;
+                    z-index: 999999999;
+                    .msjContacto{
+                        p:hover{
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /*CIERRE INDEX*/
+
+    /*BIOGRAFÍA*/
+    .bodyBio{
+        .headBio{
+            .headCol{
+                .navBio{
+                    a{font-size: 1.6vw;}
+                }
+            }
+        }
+        .mainBio{
+            .mainBioUno{
+                flex-flow: column nowrap;
+                .bioColUno{
+                    flex-flow: row nowrap;
+                    justify-content: center;
+                    img{
+                        width: 30%;
+                    }
+                }
+                .bioColDos{
+                    p{
+                        margin-left: 8vw;
+                        margin-right: 8vw;
+                    }
+                }
+            }
+            .mainBioDos{
+                flex-flow: column-reverse nowrap;
+                .bioColUno{
+                    p{
+                        margin-left: 8vw;
+                        margin-right: 8vw;
+                    }
+                }
+                .bioColDos{
+                    flex-flow: row nowrap;
+                }
+            }
+            .mainBioTres{
+                flex-flow: column nowrap;
+                .bioColUno{
+                    flex-flow: row nowrap;
+                }
+                .bioColDos{
+                    p{
+                        margin-left: 8vw;
+                        margin-right: 8vw;
+                    }
+                }
+            }
+        }
+    }
+    /*CIERRE BIOGRAFÍA*/
+
+    /*DISCOGRAFÍA*/
+    .bodyDisco{
+        .headDisco{
+            .headCol{
+                .navDisco{
+                    a{
+                        font-size: 1.6vw;
+                    }
+                }
+            }
+        }
+        .mainDisco{
+            grid-template-columns: 1fr;
+            .discosSec{
+                max-width: none;
+                width: 90%;
+                height: 200px;
+                .imgDisco{
+                    img{
+                        width: 60%;
+                    }
+                }
+                .colDosDisco{
+                    .nombre{
+                        font-size: 1.1rem;
+                    }
+                    .redes{
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
+
+    }
+    /*CIERRE DISCOGRAFÍA*/
+    
+    /*BANDAS*/
+    .bodyBandas{
+        .headBandas{
+            .headCol{
+                .navBandas{
+                    a{
+                        font-size: 1.6vw;
+                    }
+                }
+            }
+        }
+        .mainBandas{
+            .textoMainBio{
+                p{
+                    margin-left: 8vw;
+                    margin-right: 8vw;
+                }
+            }
+            .mainBandasUno{
+                flex-flow: column nowrap;
+                .bandasColUno{
+                    flex-flow: row nowrap;
+                    img{width: 35%;}
+                }
+            }
+            .mainBandasDos{
+                flex-flow: column-reverse nowrap;
+                .bandasColDos{
+                    flex-flow: row nowrap;
+                    img{width: 35%;}
+                }
+            }
+            .mainBandasTres{
+                .bandasColUno{
+                    img{width: 35%;}
+                }
+            }
+        }
+    }
+    /*CIERRE BANDAS*/
+
+    /*CONTACTO*/
+    .bodyContacto{
+        .headContacto{
+            .headCol{
+                .navInd{
+                    a{font-size: 1.6vw;}
+                }
+            }
+        }
+    }
+    /*CIERRE CONTACTO*/
+}
+@media screen and (max-width:950px){
+    /*INDEX*/
+    .bodyInd{
+        .mainInd{
+            .mainIndDos{
+                .bandasIndCol{
+                    .textoBandasInd{
+                        height: 40%;
+                    }
+                }
+            }
+        }
+    }
+    /*CIERRE INDEX*/
+
+    /*BIOGRAFÍA*/
+    .bodyBio{
+        .mainBio{
+            .mainBioUno{
+                .bioColUno{
+                .imgOculta{
+                    display: inherit;
+                }
+                }
+            }
+            .mainBioDos{
+                .bioColDos{
+                    .imgOculta{
+                        display: inherit;
+                    }
+                }
+            }
+        }
+    }
+    /*CIERRE BIOGRAFÍA*/
+
+    /*CONTACTO*/
+    .bodyContacto{
+        .mainContacto{
+            flex-flow: column nowrap;
+            padding-top: 10vh;
+            padding-bottom: 10vh;
+        }
+    }
+    /*CIERRE CONTACTO*/
+}
+@media (min-width:800px) and (max-width:1100px){
+    /*INDEX*/
+    .bodyInd{
+        .headInd{
+            .headCol{
+                .navInd{
+                    a{
+                        font-size: 1.4vw;
+                    }
+                }
+            }
+        }
+    }
+    /*CIERRE INDEX*/
+
+    /*BIOGRAFÍA*/
+    .bodyBio{
+        .headBio{
+            .headCol{
+                .navBio{
+                    a{
+                        font-size: 1.4vw;
+                    }
+                }
+            }
+        }
+    }
+    /*CIERRE BIOGRAFÍA*/
+
+    /*DISCOGRAFÍA*/
+    .bodyDisco{
+        .headDisco{
+            .headCol{
+                .navDisco{
+                    a{
+                        font-size: 1.4vw;
+                    }
+                }
+            }
+        }
+        .mainDisco{
+            grid-template-columns: 1fr;
+            .discosSec{
+                max-width: none;
+                width: 90%;
+                height: 250px;
+                .imgDisco{
+                    img{
+                        width: 50%;
+                    }
+                }
+                .colDosDisco{
+                    .nombre{
+                        font-size: 1.5rem;
+                    }
+                    .redes{
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+    /*CIERRE DISCOGRAFÍA*/
+
+    /*BANDAS*/
+    .bodyBandas{
+        .headBandas{
+            .headCol{
+                .navBandas{
+                    a{
+                        font-size: 1.4vw;
+                    }
+                }
+            }
+        }
+    }
+    /*CIERRE BANDAS*/
+    /*CONTACTO*/
+    .bodyContacto{
+        .headContacto{
+            .headCol{
+                .navInd{
+                    a{
+                        font-size: 1.4vw;
+                    }
+                }
+            }
+        }
+    }
+    /*CIERRE CONTACTO*/
+}
